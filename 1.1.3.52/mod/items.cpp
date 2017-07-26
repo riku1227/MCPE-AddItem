@@ -4,19 +4,19 @@
 
 void Items::registerCustomItems()
 {
-    Item::mItems[511] = new Item("TestItem",511-256);
+    Item::mItems[470] = new Item("normal_item",470-256);
 }
 
 void Items::initItems()
 {
     Items::registerCustomItems();
-    Item::mItems[511]->setIcon("apple",0);
-    Item::mItems[511]->setIsGlint(true);
-    Item::mItems[511]->setCategory(CreativeItemCategory::TOOLS);
+    Item::mItems[470]->setIcon("apple",0);
+    Item::mItems[470]->setIsGlint(true);
+    Item::mItems[470]->setCategory(CreativeItemCategory::TOOLS);
 }
 
 void Items::initCreativeItems()
 {
     Items::registerCustomItems();
-    Item::addCreativeItem(511,0);
+    Item::addCreativeItem(470,0);
 }
