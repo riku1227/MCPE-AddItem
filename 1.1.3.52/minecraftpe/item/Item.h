@@ -1,7 +1,7 @@
 #pragma once
 
 /*
-MCPE 1.1.3.52
+MCPE 1.1.0.55
 */
 
 #include <string>
@@ -10,6 +10,8 @@ MCPE 1.1.3.52
 #include <unordered_map>
 
 #include "CreativeItemCategory.h"
+#include "../texture/TextureUVCoordinateSet.h"
+#include "../util/BlockID.h"
 
 class ItemInstance;
 class TextureUVCoordinateSet;
