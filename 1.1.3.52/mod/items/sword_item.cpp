@@ -1,9 +1,11 @@
 #include "sword_item.h"
+#include "minecraftpe/entity/Mob.h"
 
 SwordItem::SwordItem(std::string const& name,int id) : Item(name,id)
 {
     setMaxStackSize(1);
     setCategory(CreativeItemCategory::TOOLS);
+    setMaxDamage(888);
     setHandEquipped();
 }
 
@@ -34,14 +36,12 @@ float SwordItem::getDestroySpeed(ItemInstance const& item, Block const& block) c
 
 void SwordItem::hurtEnemy(ItemInstance& item, Mob* mob1, Mob* mob2) const
 {
-    /* 耐久値減らす処理
-    またいつか書く(多分) */
+    item.hurtAndBreak(1,mob1);
 }
 
 void SwordItem::mineBlock(ItemInstance& item, BlockID blockID, int x, int y, int z, Entity* entity) const
 {
-    /* 耐久値減らす処理
-    またいつか書く(多分) */
+    item.hurtAndBreak(2,entity);
 }
 
 TextureUVCoordinateSet const& SwordItem::getIcon(int i, int i2, bool b) const
