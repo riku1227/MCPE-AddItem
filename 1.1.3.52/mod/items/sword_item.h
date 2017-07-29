@@ -2,8 +2,6 @@
 
 #include "minecraftpe/item/Item.h"
 
-class TextureUVCoordinateSet;
-
 class SwordItem : public Item
 {
 public:
