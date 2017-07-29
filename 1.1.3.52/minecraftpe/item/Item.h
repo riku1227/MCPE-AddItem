@@ -10,6 +10,7 @@ MCPE 1.1.0.55
 #include <unordered_map>
 
 #include "CreativeItemCategory.h"
+#include "ItemInstance.h"
 #include "../texture/TextureUVCoordinateSet.h"
 #include "../util/BlockID.h"
 
