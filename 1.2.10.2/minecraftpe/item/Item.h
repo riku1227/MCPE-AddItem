@@ -7,7 +7,7 @@
 
 #include "CreativeItemCategory.h"
 
-class BlockID;
+class BlockID {};
 class UseAnimation;
 class TextureUVCoordinateSet;
 class Block;
@@ -99,7 +99,7 @@ public:
   virtual int getLevelDataForAuxValue(int) const;
   virtual bool isStackedByData() const;
   virtual int getMaxDamage() const;
-  virtual float /* int? */ getAttackDamage() const;
+  virtual int getAttackDamage() const;
   virtual bool isHandEquipped() const;
   virtual bool isArmor() const;
   virtual bool isDye() const;
