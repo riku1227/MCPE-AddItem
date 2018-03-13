@@ -7,6 +7,10 @@ SwordItem::SwordItem(std::string const& name,int id) : Item(name,id) {
   setHandEquipped();
 }
 
+bool SwordItem::canDestroySpecial(Block const& block) const {
+  return mSword_iron -> canDestroySpecial(block);
+}
+
 int SwordItem::getAttackDamage() const {
   return 8;
 }

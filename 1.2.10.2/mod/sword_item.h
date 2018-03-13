@@ -6,6 +6,7 @@ class SwordItem : public Item {
 public:
   SwordItem(std::string const&,int);
 
+  virtual bool canDestroySpecial(Block const&) const;
   virtual int getAttackDamage() const;
   virtual bool canDestroyInCreative() const;
   virtual int getEnchantSlot() const;
