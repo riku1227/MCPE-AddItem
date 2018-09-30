@@ -14,7 +14,6 @@ void (*_VanillaItems_registerItems)(VanillaItems*,bool);
 void VanillaItems_registerItems(VanillaItems* vanillaItems, bool _bool) {
   _VanillaItems_registerItems(vanillaItems, _bool);
   VanillaItems::mTestItem = new Item("test_item", 17000);
-  VanillaItems::mTestItem -> setIcon("apple", 0);
   VanillaItems::mTestItem -> setCategory(CreativeItemCategory::ITEMS);
   VanillaItems::mTestItem -> setMaxStackSize(27);
   ItemRegistry::registerItem(std::unique_ptr<Item> (VanillaItems::mTestItem));
