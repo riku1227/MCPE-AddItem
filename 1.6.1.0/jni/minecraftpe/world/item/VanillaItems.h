@@ -54,7 +54,7 @@ public:
   static void* mRecordWait;
   static void* mRecordWard;
   static void* mSword_gold;
-  static void* mSword_iron;
+  static Item* mSword_iron;
   static void* mSword_wood;
   static void* mHoe_diamond;
   static void* mRecordChirp;
@@ -234,4 +234,5 @@ public:
   static void* mCauldron;
   static void* mRepeater;
   static Item* mTestItem;
+  static Item* mSwordItem;
 };

@@ -8,7 +8,10 @@
 #include "minecraftpe/world/item/Item.h"
 #include "minecraftpe/world/registry/ItemRegistry.h"
 
+#include "mod/sword_item.h"
+
 Item* VanillaItems::mTestItem = nullptr;
+Item* VanillaItems::mSwordItem = nullptr;
 
 void (*_VanillaItems_registerItems)(VanillaItems*,bool);
 void VanillaItems_registerItems(VanillaItems* vanillaItems, bool _bool) {
@@ -17,6 +20,9 @@ void VanillaItems_registerItems(VanillaItems* vanillaItems, bool _bool) {
   VanillaItems::mTestItem -> setCategory(CreativeItemCategory::ITEMS);
   VanillaItems::mTestItem -> setMaxStackSize(27);
   ItemRegistry::registerItem(std::unique_ptr<Item> (VanillaItems::mTestItem));
+
+  VanillaItems::mSwordItem = new SwordItem("sword_item",17001);
+  ItemRegistry::registerItem(std::unique_ptr<Item> (VanillaItems::mSwordItem));
 }
 
 void (*_VanillaItems_initClientData)(VanillaItems*);
@@ -24,6 +30,7 @@ void VanillaItems_initClientData(VanillaItems* vanillaItems) {
   _VanillaItems_initClientData(vanillaItems);
   
   VanillaItems::mTestItem -> setIcon("apple", 0);
+  VanillaItems::mSwordItem -> setIcon("stick", 0);
 }
 
 void (*_Item_initCreativeItems)(bool, void*);
@@ -31,6 +38,7 @@ void Item_initCreativeItems(bool b1, void* func) {
   _Item_initCreativeItems(b1, func);
 
   Item::addCreativeItem(VanillaItems::mTestItem, 0);
+  Item::addCreativeItem(VanillaItems::mSwordItem, 0);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
