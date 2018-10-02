@@ -21,6 +21,17 @@ bool SwordItem::canDestroyInCreative() const {
   return false;
 }
 
+void SwordItem::appendFormattedHovertext(ItemInstance const& item, Level& level, std::string& str, bool b) const {
+  Item::appendFormattedHovertext(item, level, str, b);
+
+  /*
+    TODO
+    Multi language
+    Fix hard code
+  */
+  str += "\n\n§9+10 攻撃力§r"; 
+}
+
 int SwordItem::getEnchantSlot() const {
   return VanillaItems::mSword_iron -> getEnchantSlot();
 }
