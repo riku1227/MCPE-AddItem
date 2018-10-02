@@ -40,6 +40,10 @@ int SwordItem::getEnchantValue() const {
   return 60;
 }
 
+float SwordItem::getDestroySpeed(ItemInstance const& item, Block const& block) const {
+  return VanillaItems::mSword_iron -> getDestroySpeed(item, block);
+}
+
 void SwordItem::hurtEnemy(ItemInstance& item, Mob* mob1, Mob* mob2) const {
   return VanillaItems::mSword_iron -> hurtEnemy(item, mob1, mob2);
 }
