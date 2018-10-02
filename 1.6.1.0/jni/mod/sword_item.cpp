@@ -1,6 +1,7 @@
 #include "sword_item.h"
 
 #include "minecraftpe/world/item/VanillaItems.h"
+#include "minecraftpe/client/recourses/I18n.h"
 
 SwordItem::SwordItem(std::string const& nameId, short id) : Item(nameId, id) {
   setMaxStackSize(1);
@@ -26,10 +27,9 @@ void SwordItem::appendFormattedHovertext(ItemInstance const& item, Level& level,
 
   /*
     TODO
-    Multi language
     Fix hard code
   */
-  str += "\n\n§9+10 攻撃力§r"; 
+  str += "\n\n§9+10 "+ I18n::get("attribute.name.generic.attackDamage"); 
 }
 
 int SwordItem::getEnchantSlot() const {
