@@ -9,9 +9,11 @@
 #include "minecraftpe/world/registry/ItemRegistry.h"
 
 #include "mod/sword_item.h"
+#include "mod/shovel_item.h"
 
 Item* VanillaItems::mTestItem = nullptr;
 Item* VanillaItems::mSwordItem = nullptr;
+Item* VanillaItems::mShovelItem = nullptr;
 
 void (*_VanillaItems_registerItems)(VanillaItems*,bool);
 void VanillaItems_registerItems(VanillaItems* vanillaItems, bool _bool) {
@@ -23,6 +25,9 @@ void VanillaItems_registerItems(VanillaItems* vanillaItems, bool _bool) {
 
   VanillaItems::mSwordItem = new SwordItem("sword_item",17001);
   ItemRegistry::registerItem(std::unique_ptr<Item> (VanillaItems::mSwordItem));
+
+  VanillaItems::mShovelItem = new ShovelItem("shovel_item", 17002);
+  ItemRegistry::registerItem(std::unique_ptr<Item> (VanillaItems::mShovelItem));
 }
 
 void (*_VanillaItems_initClientData)(VanillaItems*);
@@ -31,6 +36,7 @@ void VanillaItems_initClientData(VanillaItems* vanillaItems) {
   
   VanillaItems::mTestItem -> setIcon("apple", 0);
   VanillaItems::mSwordItem -> setIcon("stick", 0);
+  VanillaItems::mShovelItem -> setIcon("flint", 0);
 }
 
 void (*_Item_initCreativeItems)(bool, void*);
@@ -39,6 +45,7 @@ void Item_initCreativeItems(bool b1, void* func) {
 
   Item::addCreativeItem(VanillaItems::mTestItem, 0);
   Item::addCreativeItem(VanillaItems::mSwordItem, 0);
+  Item::addCreativeItem(VanillaItems::mShovelItem, 0);
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {

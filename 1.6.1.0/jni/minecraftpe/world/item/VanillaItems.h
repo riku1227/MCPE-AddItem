@@ -60,7 +60,7 @@ public:
   static void* mRecordChirp;
   static void* mRecordStrad;
   static void* mShovel_gold;
-  static void* mShovel_iron;
+  static Item* mShovel_iron;
   static void* mShovel_wood;
   static void* mSword_stone;
   static void* mHatchet_gold;
@@ -235,4 +235,5 @@ public:
   static void* mRepeater;
   static Item* mTestItem;
   static Item* mSwordItem;
+  static Item* mShovelItem;
 };
